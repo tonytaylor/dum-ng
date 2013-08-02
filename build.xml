@@ -4,6 +4,6 @@
 	</description>
 
 	<target name="lint">
-		<jshint />
+		<echo message="${env.BUILD_TAG}" />
 	</target>
 </project>
