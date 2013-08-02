@@ -1,0 +1,9 @@
+<project name="dum-ng">
+	<description>
+		test ant script for a test javascript jenkins-ci job
+	</description>
+
+	<target name="lint">
+		<jshint />
+	</target>
+</project>
