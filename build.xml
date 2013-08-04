@@ -1,12 +1,15 @@
-<project name="dum-ng" default="lint">
+<project name="dum-ng" default="lint" basedir=".">
 	<description>
-		test ant script for a test javascript jenkins-ci job
+		test ant script for a javascript jenkins-ci job
 	</description>
+	<property name="src" location="js/src" />
+	<property name="css" location="css" />
+	<property name="tests" location="js/tests" />
 
 	<target name="lint">
 		<echo message="running jshint" />
 		<exec executable="jshint" failonerror="true">
-			<arg value="js/src/controllers.js" />
+			<arg value="${src}/controllers.js" />
 		</exec>
 	</target>
 </project>
