@@ -1,4 +1,4 @@
-<project name="dum-ng" default="lint" basedir=".">
+<project name="dum-ng" default="test" basedir=".">
 	<description>
 		test ant script for a javascript jenkins-ci job
 	</description>
@@ -10,6 +10,14 @@
 		<echo message="running jshint" />
 		<exec executable="jshint" failonerror="true">
 			<arg value="${src}/controllers.js" />
+		</exec>
+	</target>
+
+	<target name="test" depends="lint">
+		<echo message="running phantomjs" />
+		<exec executable="phantomjs" failonerror="true">
+			<arg value="${tests}/jas-runner.js" />
+			<arg value="specrunner.html" />
 		</exec>
 	</target>
 </project>
