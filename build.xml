@@ -1,9 +1,12 @@
-<project name="dum-ng">
+<project name="dum-ng" default="lint">
 	<description>
 		test ant script for a test javascript jenkins-ci job
 	</description>
 
 	<target name="lint">
-		<echo message="${env.BUILD_TAG}" />
+		<echo message="running jslint" />
+		<exec executable="jshint">
+			<arg value="js/src/controllers.js" />
+		</exec>
 	</target>
 </project>

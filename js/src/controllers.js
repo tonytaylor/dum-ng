@@ -15,4 +15,3 @@ function PhoneListCtrl($scope) {
 	];
 }
 
-;;
