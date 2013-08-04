@@ -4,8 +4,8 @@
 	</description>
 
 	<target name="lint">
-		<echo message="running jslint" />
-		<exec executable="jshint">
+		<echo message="running jshint" />
+		<exec executable="jshint" failonerror="true">
 			<arg value="js/src/controllers.js" />
 		</exec>
 	</target>
