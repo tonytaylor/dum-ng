@@ -1,7 +1,7 @@
 function PhoneListCtrl($scope) {
 	$scope.phones = [
 		{
-			"name": "Nexus S",
+			"name": "Nexus S"
 			"snippet": "Fast just got faster with Nexus S."
 		},
 		{
