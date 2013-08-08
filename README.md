@@ -1,4 +1,4 @@
 dum-ng
 ======
 
-Don't look at this!!!
+Nothing to see here really. Just a test app used to learn some other thing...
