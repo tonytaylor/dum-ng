@@ -1,7 +1,7 @@
 describe('PhoneCat App', function () {
 	describe('Phone List View', function () {
 		beforeEach(function () {
-			browser().navigateTo('/index.html');
+			browser().navigateTo('/index.html#/phones');
 		});
 
 		it('should filter the phone list as user types into the search box', function () {
@@ -40,6 +40,20 @@ describe('PhoneCat App', function () {
 			input('query').enter('nexus');
 			element('.phones li a').click();
 			expect(browser().location().url()).toBe('/phones/nexus-s');
+		});
+	});
+	
+	describe('Phone detail view', function () {
+		beforeEach(function () {
+			browser().navigateTo('/index.html#/phones/nexus-s');
+		});
+
+		it('should display nexus-s page', function () {
+			expect(binding('phone.name')).toBe('Nexus S');
+		});	
+
+		it('should have four thumbnail images', function () {
+			expect(repeater('.phone-thumbs li > img').count()).toBe(4);
 		});
 	});
 });

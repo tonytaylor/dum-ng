@@ -1,0 +1,9 @@
+{
+	"name": "jenk-test",
+	"dependencies": {
+		"jasmine-standalone": "*",
+		"karma": "*",
+		"karma-ng-scenario": "*",
+		"karma-opera-launcher": "*"
+	}
+}

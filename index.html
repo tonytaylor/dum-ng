@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" ng-app ng-controller="PhoneListCtrl">
+<html lang="en" ng-app="phonecat">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<title ng-bind-template="Google Phone Gallery: {{query}}">
-			Google Phone Gallery: {{ query }}
-		</title>
+		<title>Google Phone Gallery</title>
 		<link
 			rel="stylesheet" 
 			href="css/lib/bootstrap/bootstrap.css" 
@@ -13,34 +11,11 @@
 		/>
 		<link rel="stylesheet" href="css/app.css" type="text/css" media="screen" />
 		<script src="js/lib/angular/angular.js"></script>
+		<script src="js/src/app.js"></script>
 		<script src="js/src/controllers.js"></script>
+		<script src="js/src/filters.js"></script>
 	</head>
 	<body>
-		<div class="container-fluid">
-			<div class="row-fluid">
-				<div class="span2">
-					<div id="status">Current filter: {{ query }}</div>
-					<br />
-					search: <input ng-model="query" /><br /><br />
-					sort by:
-					<select ng-model="orderProp">
-						<option value="name">Alphabetical</option>
-						<option value="age">Newest</option>
-					</select>
-				</div>
-				<div class="span10">
-					<ul class="phones">
-						<li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
-							<a href="#/phones/{{ phone.id }}" class="thumb">
-								<img ng-src="{{phone.imageUrl}}" />
-							</a>
-							<a href="#/phones/{{ phone.id }}">{{ phone.name }}</a>
-							<p>{{ phone.snippet }}</p>
-						</li>
-					</ul>
-					<p>Total number of phones: {{ phones.length }}</p>
-				</div>
-			</div>
-		</div>
+		<div ng-view></div>
 	</body>
 </html>

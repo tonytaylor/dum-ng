@@ -1,0 +1,26 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span2">
+			<div id="status">Current filter: {{ query }}</div>
+			<br />
+			search: <input ng-model="query" /><br /><br />
+			sort by:
+			<select ng-model="orderProp">
+				<option value="name">Alphabetical</option>
+				<option value="age">Newest</option>
+			</select>
+		</div>
+		<div class="span10">
+			<ul class="phones">
+				<li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+					<a href="#/phones/{{ phone.id }}" class="thumb">
+						<img ng-src="{{phone.imageUrl}}" />
+					</a>
+					<a href="#/phones/{{ phone.id }}">{{ phone.name }}</a>
+					<p>{{ phone.snippet }}</p>
+				</li>
+			</ul>
+			<p>Total number of phones: {{ phones.length }}</p>
+		</div>
+	</div>
+</div>
